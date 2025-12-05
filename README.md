@@ -45,11 +45,11 @@ A quick overview of the main folders:
 
 ## Demo Video & Screenshots :
 
-- Desktop View - 1440px Width: ![alt text](./src/assets/screenshots/image.png)
+- Desktop View - 1440px Width: ![Desktop View](./src/assets/screenshots/image.png)
 
-- Add Clothes View - 1440px width: ![alt text](./src/assets/screenshots/image2.png)
+- Add Garment View - 1440px width: ![Add Garment View](./src/assets/screenshots/image2.png)
 
-- Item Card View - 1440px width: ![alt text](./src/assets/screenshots/image3.png)
+- Item Card View - 1440px width: ![Add Item Card View](./src/assets/screenshots/image3.png)
 
 **Demo Video:**
 A full walkthrough video will be added here after completing all frontend sprints.
