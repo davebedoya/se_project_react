@@ -1,0 +1,35 @@
+.card {
+  width: 323px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.card__image {
+  object-fit: cover;
+  object-position: right top;
+  width: 100%;
+  border-radius: 20px;
+  border: solid thin rgba(0, 0, 0, 0.3);
+}
+
+.card__name {
+  position: absolute;
+  top: 15px;
+  margin: 0;
+  background-color: white;
+  border-radius: 5px;
+  padding: 2px 12px;
+  color: #00000099;
+  font-family: "CabinetGrotesk", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+/* @media screen and (max-width: 375px) {
+  .card {
+    width: 164px;
+    height: 164px;
+  }
+} */

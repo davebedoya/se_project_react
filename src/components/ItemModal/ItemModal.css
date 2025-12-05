@@ -1,0 +1,34 @@
+.modal__content_type_image {
+  height: 610px;
+  padding: 0;
+  overflow: hidden;
+}
+
+.modal__image_close-icon {
+  max-height: 498px;
+}
+
+.modal__image_close {
+  right: 24px;
+  top: 24px;
+}
+
+.modal__footer {
+  padding: 20px 32px 32px;
+}
+
+.modal__caption {
+  font-family: "CabinetGrotesk", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  margin: 0;
+}
+
+.modal__weather {
+  font-family: "CabinetGrotesk", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  margin: 12px 0 0;
+}
