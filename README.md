@@ -58,7 +58,7 @@ A full walkthrough video will be added here after completing all frontend sprint
 
 ## GitHub Pages :
 
-- [Github Link](_PlaceHolder To be added soon_)
+- [Github Link](https://github.com/davebedoya/se_project_react)
 
 ## Disclaimer :
 
