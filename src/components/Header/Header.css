@@ -24,6 +24,7 @@
   line-height: 24px;
   border: none;
   background: none;
+  cursor: pointer;
 }
 
 .header__user-container {
