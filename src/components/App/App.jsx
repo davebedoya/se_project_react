@@ -20,9 +20,7 @@ function App() {
   });
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
-  const [clothingItems, setClothingItems] = useState(
-    () => defaultClothingItems
-  );
+  const [clothingItems, setClothingItems] = useState(defaultClothingItems);
 
   useEffect(() => {
     getWeather(coordinates, apiKey)
