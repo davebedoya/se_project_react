@@ -8,26 +8,30 @@ function DeleteModal({ isOpen, onClose, onDelete }) {
         <button
           onClick={onClose}
           type="button"
-          className="modal__close modal__image_close"
+          className="modal__close modal__delete_close"
         >
-          <img src={closeIcon} alt="Close" className="modal__close_icon" />
+          <img
+            src={closeIcon}
+            alt="Close"
+            className="modal__close-icon modal__delete_close-icon"
+          />
         </button>
-        <p className="modal__content_type_delete-text">
+        <p className="modal__delete-text">
           Are you sure you want to delete this item?
-          <span className="modal__content_type_delete-text-span"></span> This
-          action is irreversable.
+          <span className="modal__delete-text-span"></span> This action is
+          irreversable.
         </p>
         <button
           onClick={onDelete}
           type="button"
-          className="modal__caption_delete-modal-btn"
+          className="modal__delete-modal-btn"
         >
           Yes, delete item
         </button>
         <button
           onClick={onClose}
           type="button"
-          className="modal__caption_cancel-delete-modal-btn"
+          className="modal__cancel-modal-btn"
         >
           Cancel
         </button>
