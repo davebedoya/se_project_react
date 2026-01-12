@@ -98,45 +98,9 @@
     },
     {
       "imageUrl": "https://images.pexels.com/photos/1704488/pexels-photo-1704488.jpeg?cs=srgb&dl=pexels-sulimansallehi-1704488.jpg&fm=jpg",
-      "name": "David bedoya",
-      "weather": "hot",
-      "_id": 18
-    },
-    {
-      "imageUrl": "https://images.pexels.com/photos/1704488/pexels-photo-1704488.jpeg?cs=srgb&dl=pexels-sulimansallehi-1704488.jpg&fm=jpg",
       "name": "Bessie Coleman",
-      "weather": "warm",
-      "_id": 19
-    },
-    {
-      "imageUrl": "https://images.pexels.com/photos/1704488/pexels-photo-1704488.jpeg?cs=srgb&dl=pexels-sulimansallehi-1704488.jpg&fm=jpg",
-      "name": "David Bedoya",
       "weather": "hot",
-      "_id": 20
-    },
-    {
-      "imageUrl": "https://images.pexels.com/photos/1704488/pexels-photo-1704488.jpeg?cs=srgb&dl=pexels-sulimansallehi-1704488.jpg&fm=jpg",
-      "name": "David bedoya",
-      "weather": "warm",
-      "_id": 21
-    },
-    {
-      "imageUrl": "https://images.pexels.com/photos/1704488/pexels-photo-1704488.jpeg?cs=srgb&dl=pexels-sulimansallehi-1704488.jpg&fm=jpg",
-      "name": "David bedoya",
-      "weather": "cold",
-      "_id": 22
-    },
-    {
-      "imageUrl": "https://images.pexels.com/photos/1704488/pexels-photo-1704488.jpeg?cs=srgb&dl=pexels-sulimansallehi-1704488.jpg&fm=jpg",
-      "name": "David bedoya111",
-      "weather": "cold",
-      "_id": 23
-    },
-    {
-      "imageUrl": "https://images.pexels.com/photos/1704488/pexels-photo-1704488.jpeg?cs=srgb&dl=pexels-sulimansallehi-1704488.jpg&fm=jpg",
-      "name": "sebastioan",
-      "weather": "hot",
-      "_id": 24
+      "_id": 16
     }
   ]
 }

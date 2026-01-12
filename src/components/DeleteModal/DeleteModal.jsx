@@ -1,4 +1,5 @@
 import "./DeleteModal.css";
+import closeIcon from "../../assets/modal__close-btn.svg";
 
 function DeleteModal({ isOpen, onClose, onDelete }) {
   return (
@@ -8,10 +9,13 @@ function DeleteModal({ isOpen, onClose, onDelete }) {
           onClick={onClose}
           type="button"
           className="modal__close modal__image_close"
-        ></button>
+        >
+          <img src={closeIcon} alt="Close" className="modal__close_icon" />
+        </button>
         <p className="modal__content_type_delete-text">
-          Are you sure you want to delete this item? <span></span> This action
-          is irreversable.
+          Are you sure you want to delete this item?
+          <span className="modal__content_type_delete-text-span"></span> This
+          action is irreversable.
         </p>
         <button
           onClick={onDelete}
