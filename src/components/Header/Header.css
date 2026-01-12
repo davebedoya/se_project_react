@@ -17,9 +17,7 @@
 }
 
 .header__add-clothes-btn {
-  /* margin: 0 20px 0 auto; */
   margin: 0 20px;
-
   font-family: "CabinetGrotesk", sans-serif;
   font-weight: 700;
   font-size: 20px;
@@ -48,17 +46,18 @@
   text-decoration: none;
 }
 
-/* @media screen and (max-width: 375px) {
+@media screen and (max-width: 375px) {
   .header {
-    flex-direction: column;
     margin: 0 0 16px 0;
-    justify: center;
+    justify-content: space-between;
+    padding: 0;
   }
 
   .header__add-clothes-btn {
+    visibility: hidden;
   }
 
-  .header__user-container {
-    
-  } 
-} */
+  .header__nav-link {
+    visibility: hidden;
+  }
+}

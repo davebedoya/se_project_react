@@ -51,10 +51,9 @@ A quick overview of the main folders:
 
 - Item Card View - 1440px width: ![Add Item Card View](./src/assets/screenshots/image3.png)
 
-**Demo Video:**
-A full walkthrough video will be added here after completing all frontend sprints.
+## Project Pitch Video
 
-- [Screen recording](_PlaceHolder To be added soon_)
+Check out [this video](https://www.loom.com/share/83c2daba0f744e3eab3e9b63fb4f9a42), where I describe my WTWR React project, the main features, and challenges I faced.
 
 ## GitHub Pages :
 
