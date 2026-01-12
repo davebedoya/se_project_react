@@ -16,7 +16,7 @@ import { getItems, addItem, deleteCard } from "../../utils/api";
 function App() {
   const [weatherData, setWeatherData] = useState({
     type: "",
-    temp: { F: 999 },
+    temp: { F: 999, C: 999 },
     city: "",
     isDay: true,
     condition: "",

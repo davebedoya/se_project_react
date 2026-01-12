@@ -97,10 +97,22 @@
       "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Sweatshirt.png?etag=008a9674757bea2e0bdb31242e364be0"
     },
     {
-      "imageUrl": "https://www.dreamstime.com/winter-season-items-cozy-winter-clothes-set-winter-items-vector-isolated-illustration-winter-vacation-holiday-mountain-image263745264",
-      "name": "Gloves",
-      "weather": "cold",
+      "imageUrl": "https://images.pexels.com/photos/1704488/pexels-photo-1704488.jpeg?cs=srgb&dl=pexels-sulimansallehi-1704488.jpg&fm=jpg",
+      "name": "Viviana and Henry Pimentel",
+      "weather": "warm",
       "_id": 16
+    },
+    {
+      "imageUrl": "https://images.pexels.com/photos/1704488/pexels-photo-1704488.jpeg?cs=srgb&dl=pexels-sulimansallehi-1704488.jpg&fm=jpg",
+      "name": "Viviana and Henry Pimentel",
+      "weather": "hot",
+      "_id": 17
+    },
+    {
+      "imageUrl": "https://www.dreamstime.com/winter-season-items-cozy-winter-clothes-set-winter-items-vector-isolated-illustration-winter-vacation-holiday-mountain-image263745264",
+      "name": "Viviana and Henry Pimentel",
+      "weather": "hot",
+      "_id": 18
     }
   ]
 }
