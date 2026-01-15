@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useForm } from "../../hooks/useForm";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
@@ -12,20 +11,19 @@ const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
 
   function handleSubmit(evt) {
     evt.preventDefault();
-    onAddItem(values);
+    onAddItem(values, resetForm);
   }
 
-  useEffect(() => {
-    if (isOpen) {
-      resetForm();
-    }
-  }, [isOpen]);
+  function handleFormClose() {
+    onClose();
+    resetForm();
+  }
 
   return (
     <ModalWithForm
       title="New garment"
       buttonText="Add garment"
-      onClose={onClose}
+      onClose={handleFormClose}
       isOpen={isOpen}
       onSubmit={handleSubmit}
     >
@@ -68,7 +66,8 @@ const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
             className="modal__radio-input"
             required
             onChange={handleChange}
-          />{" "}
+            checked={values.weatherType === "hot"}
+          />
           <span className="modal__radio-text">Hot</span>
         </label>
         <label htmlFor="warm" className="modal__label modal__label_type_radio">
@@ -79,7 +78,8 @@ const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
             name="weatherType"
             className="modal__radio-input"
             onChange={handleChange}
-          />{" "}
+            checked={values.weatherType === "warm"}
+          />
           <span className="modal__radio-text">Warm</span>{" "}
         </label>
         <label htmlFor="cold" className="modal__label modal__label_type_radio">
@@ -90,7 +90,8 @@ const AddItemModal = ({ isOpen, onAddItem, onClose }) => {
             name="weatherType"
             className="modal__radio-input"
             onChange={handleChange}
-          />{" "}
+            checked={values.weatherType === "cold"}
+          />
           <span className="modal__radio-text">Cold</span>
         </label>
       </fieldset>

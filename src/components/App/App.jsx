@@ -13,6 +13,8 @@ import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnit
 import Profile from "../Profile/Profile";
 import { getItems, addItem, deleteCard } from "../../utils/api";
 
+import DeleteModal from "../DeleteModal/DeleteModal";
+
 function App() {
   const [weatherData, setWeatherData] = useState({
     type: "",
@@ -49,7 +51,7 @@ function App() {
     setActiveModal("preview");
   };
 
-  const onAddItem = (inputValues) => {
+  const onAddItem = (inputValues, resetForm) => {
     const newCardData = {
       name: inputValues.name,
       imageUrl: inputValues.imageUrl,
@@ -59,6 +61,7 @@ function App() {
       .then((data) => {
         setClothingItems([data, ...clothingItems]);
         closeModal();
+        resetForm();
       })
       .catch(console.error);
   };
@@ -125,13 +128,15 @@ function App() {
           onClose={closeModal}
           onAddItem={onAddItem}
         />
-
         <ItemModal
           isOpen={activeModal === "preview"}
           card={selectedCard}
           onClose={closeModal}
           handleDeleteClick={handleDeleteClick}
-          activeModal={activeModal}
+        />
+        <DeleteModal
+          isOpen={activeModal === "delete"}
+          onClose={closeModal}
           onDelete={onDelete}
         />
       </div>
