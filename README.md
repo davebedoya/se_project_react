@@ -58,6 +58,7 @@ Check out [this video](https://www.loom.com/share/83c2daba0f744e3eab3e9b63fb4f9a
 ## GitHub Pages :
 
 - [Github Link](https://github.com/davebedoya/se_project_react)
+- [Github Pages](https://davebedoya.github.io/se_project_react/)
 
 ## Disclaimer :
 
