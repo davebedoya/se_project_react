@@ -12,10 +12,13 @@ export const getItems = () => {
   return fetch(`${baseUrl}/items`, { headers }).then(handleServerResponse);
 };
 
-export const addItem = ({ name, imageUrl, weather }) => {
+export const addItem = ({ name, imageUrl, weather }, token) => {
   return fetch(`${baseUrl}/items`, {
     method: "POST",
-    headers,
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
     body: JSON.stringify({
       imageUrl,
       name,
@@ -24,9 +27,30 @@ export const addItem = ({ name, imageUrl, weather }) => {
   }).then(handleServerResponse);
 };
 
-export const deleteCard = (id) => {
+export const deleteCard = (id, token) => {
   return fetch(`${baseUrl}/items/${id}`, {
     method: "DELETE",
-    headers,
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  }).then(handleServerResponse);
+};
+
+export const addCardLike = (id, token) => {
+  return fetch(`${baseUrl}/items/${id}/likes`, {
+    method: "PUT",
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  }).then(handleServerResponse);
+};
+
+export const removeCardLike = (id, token) => {
+  return fetch(`${baseUrl}/items/${id}/likes`, {
+    method: "DELETE",
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
   }).then(handleServerResponse);
 };

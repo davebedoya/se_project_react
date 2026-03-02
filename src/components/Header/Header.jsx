@@ -1,14 +1,29 @@
 import "./Header.css";
 import logo from "../../assets/logo.svg";
-import avatar from "../../assets/avatar.png";
+// import avatar from "../../assets/avatar.png";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import { NavLink } from "react-router-dom";
 
-function Header({ handleAddClick, weatherData }) {
+import { useContext } from "react";
+import CurrentUserContext from "../../contexts/CurrentUserContext";
+
+function Header({
+  handleAddClick,
+  weatherData,
+  isLoggedIn,
+  onRegisterClick,
+  onLoginClick,
+}) {
   const currentDate = new Date().toLocaleString("default", {
     month: "long",
     day: "numeric",
   });
+
+  const currentUser = useContext(CurrentUserContext);
+  const userName = currentUser?.name || "";
+  const userAvatar = currentUser?.avatar || "";
+  const userInitial = (userName.trim()[0] || "?").toUpperCase();
+
   return (
     <div className="header">
       <NavLink to="/">
@@ -27,8 +42,39 @@ function Header({ handleAddClick, weatherData }) {
       </button>
       <NavLink className="header__nav-link" to="/profile">
         <div className="header__user-container">
-          <p className="header__username">Terrence Tegegne</p>
-          <img src={avatar} alt="Terrence Tegegne" className="header__avatar" />
+          {/* <p className="header__username">Terrence Tegegne</p>
+          <img src={avatar} alt="Terrence Tegegne" className="header__avatar" /> */}
+          {isLoggedIn ? (
+            <>
+              <p className="header__username">{userName}</p>
+              {userAvatar ? (
+                <img
+                  src={userAvatar}
+                  alt={userName}
+                  className="header__avatar"
+                />
+              ) : (
+                <div className="header__avatar-placeholder">{userInitial}</div>
+              )}
+            </>
+          ) : (
+            <>
+              <button
+                type="button"
+                className="header__auth-btn"
+                onClick={onRegisterClick}
+              >
+                Sign Up
+              </button>
+              <button
+                type="button"
+                className="header__auth-btn"
+                onClick={onLoginClick}
+              >
+                Log In
+              </button>
+            </>
+          )}
         </div>
       </NavLink>
     </div>
