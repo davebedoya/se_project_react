@@ -131,6 +131,7 @@ function App() {
   };
 
   const handleUpdateUser = ({ name, avatar }, resetForm) => {
+    console.log("handleUpdateUser received", { name, avatar });
     const token = localStorage.getItem("jwt");
     console.log("handleUpdateUser called", { name, avatar, hasToken: !!token });
 

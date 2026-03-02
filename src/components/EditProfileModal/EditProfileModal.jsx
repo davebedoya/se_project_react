@@ -31,43 +31,20 @@ function EditProfileModal({ isOpen, onClose, onUpdateUser }) {
   }, [isOpen, currentUser, setValues]);
 
   function handleSubmit(evt) {
-    // // console.log("edit profile submit fired", values);
     evt.preventDefault();
-    // // const newErrors = validateAndSetErrors(values);
-    // const valuesToValidate = {
-    //   name: values.name,
-    //   ...(values.avatar ? { avatar: values.avatar } : {}),
-    // };
 
-    // const newErrors = validateAndSetErrors(valuesToValidate);
-    // if (Object.keys(newErrors).length === 0) {
-    //   onUpdateUser(
-    //     {
-    //       name: values.name,
-    //       avatar: values.avatar,
-    //     },
-    //     resetForm,
-    //   );
-    // }
-    let valuesToValidate = {
-      name: values.name,
-    };
-    // we are always validating the name
-    if (values.avatar) {
-      valuesToValidate.avatar = values.avatar;
-    }
-    //if the user typed something in the avatar feild validate it
-    const newErrors = validateAndSetErrors(valuesToValidate);
-    // is name valid? if avatar exists , is it a valid URL
-    if (Object.keys(newErrors).length === 0) {
-      onUpdateUser(
-        {
-          name: values.name,
-          avatar: values.avatar,
-        },
-        resetForm,
-      );
-    }
+    console.log("EditProfileModal handleSubmit fired", values);
+
+    // Let HTML validation handle the required name + url format.
+    // If we get here, call App handler which will PATCH /users/me,
+    // then update state + close the modal on success.
+    onUpdateUser(
+      {
+        name: values.name,
+        avatar: values.avatar,
+      },
+      resetForm,
+    );
   }
 
   function handleFormClose() {
@@ -87,6 +64,7 @@ function EditProfileModal({ isOpen, onClose, onUpdateUser }) {
         Name*
         <input
           type="text"
+          required
           className={`modal__input ${
             isFormSubmitted && errors.name ? "modal__input_type_invalid" : ""
           }`}

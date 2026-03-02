@@ -63,3 +63,7 @@ Check out [this video](https://www.loom.com/share/83c2daba0f744e3eab3e9b63fb4f9a
 ## Disclaimer :
 
 This is a **frontend-only** version of WTWR. Future sprints will expand the project with login, likes, item creation with a backend, and more advanced features.
+
+## Backend Repo:
+
+- [Github Link](https://github.com/davebedoya/se_project_express)
