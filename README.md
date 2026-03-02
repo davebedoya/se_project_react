@@ -2,46 +2,73 @@
 
 WTWR ("What To Wear") is a weather-based wardrobe app built in React. The app fetches real-time weather data for a chosen location and suggests clothing items based on temperature.
 
-## Overview & Functionality :
+## Overview & Functionality
 
-As part of Sprint 10 in the TripleTen Software Engineering program, this project involved rebuilding the WTWR layout using React + Vite, and implementing essential functionality such as:
+As part of Sprint 14 in the TripleTen Software Engineering program, this project evolved into a **full‑stack WTWR application**. The React frontend communicates with an Express + MongoDB backend to support authentication, protected routes, profile editing, and persistent likes.
+
+Core functionality now includes:
 
 - Fetching weather data from the OpenWeather API
 - Displaying the current date and city
 - Filtering clothing items by temperature conditions
-- Opening and closing modal windows
-- Passing data through multiple components
+- User registration and login using JWT authentication
+- Protected profile route (`/profile`)
+- Editing user profile information (name + avatar)
+- Liking and unliking clothing items (state persists in database)
+- Adding and deleting garments (authorized users only)
 - Managing global UI state (selected card, active modal, etc.) from the App component
 
-## Features :
+## Features
 
 - Display today’s **date** and **current city**
 - Fetch real-time weather data from the **OpenWeather API**
-- Show the current temperature in **°F**
+- Toggle temperature between **°F and °C**
 - Suggest clothing items based on weather type (`hot`, `warm`, `cold`)
-- Click a clothing item to open a detailed item modal
-- Open a form modal to add a new garment (name, image URL, weather type)
+- User **Sign Up / Sign In / Sign Out** (JWT-based authentication)
+- Persistent login using token validation on page load (`GET /users/me`)
+- Protected `/profile` route for authorized users only
+- Edit profile (update name and avatar)
+- Like / Unlike clothing items (state saved to database)
+- Add and delete garments (authorized users only)
 
-## Technologies :
+## Technologies
+
+### Frontend
 
 - **React** (functional components + hooks)
 - **Vite** (fast bundler/dev server)
 - **JavaScript (ES6+)**
-- **CSS** (BEM-style, component-level styles)
-- **Fetch API** for weather requests
+- **CSS (BEM methodology)**
+- **Fetch API**
 - **Prettier** for code formatting
 - **Normalize.css**
-- **Custom fonts** from the UI Kit
+- Custom fonts from the UI Kit
 
-## Project Structure :
+### Backend
 
-A quick overview of the main folders:
+- **Node.js**
+- **Express.js**
+- **MongoDB + Mongoose**
+- **JWT (jsonwebtoken)** for authentication
+- **bcryptjs** for password hashing
 
-- `/src/components` — React components (`App`, `Header`, `Main`, `Footer`, `WeatherCard`, `ItemCard`, `ItemModal`, `ModalWithForm`)
-- `/src/utils` — default clothing data, weather helpers, and constants
+## Project Structure
+
+### Frontend (`se_project_react`)
+
+- `/src/components` — React components (App, Header, Main, Profile, modals, etc.)
+- `/src/utils` — API functions (`api.js`, `auth.js`), constants, weather helpers
+- `/src/contexts` — Context providers (CurrentUserContext, CurrentTemperatureUnitContext)
+- `/src/hooks` — Custom hooks (`useForm`)
 - `/src/vendor` — fonts, `normalize.css`, and `fonts.css`
-- `/src/index.css` — global styles
-- `/src/main.jsx` — app entry point
+
+### Backend (`se_project_express`)
+
+- `/controllers` — route logic
+- `/routes` — API routes
+- `/models` — Mongoose schemas
+- `/middlewares` — authentication middleware
+- `/utils` — helper utilities
 
 ## Demo Video & Screenshots :
 
@@ -60,10 +87,12 @@ Check out [this video](https://www.loom.com/share/83c2daba0f744e3eab3e9b63fb4f9a
 - [Github Link](https://github.com/davebedoya/se_project_react)
 - [Github Pages](https://davebedoya.github.io/se_project_react/)
 
-## Disclaimer :
-
-This is a **frontend-only** version of WTWR. Future sprints will expand the project with login, likes, item creation with a backend, and more advanced features.
-
 ## Backend Repo:
 
 - [Github Link](https://github.com/davebedoya/se_project_express)
+
+## Disclaimer
+
+This is a **full‑stack WTWR application**. The frontend communicates with a custom Express/MongoDB backend that handles authentication, protected routes, user profiles, and clothing item interactions.
+
+The backend repository is linked above and publicly accessible.
