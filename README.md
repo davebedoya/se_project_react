@@ -31,7 +31,7 @@ Core functionality now includes:
 - Like / Unlike clothing items (state saved to database)
 - Add and delete garments (authorized users only)
 
-## Technologies
+## Technologiesgit
 
 ### Frontend
 
