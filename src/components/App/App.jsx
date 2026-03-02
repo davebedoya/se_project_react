@@ -17,6 +17,7 @@ import {
   deleteCard,
   addCardLike,
   removeCardLike,
+  updateUser,
 } from "../../utils/api";
 
 import DeleteModal from "../DeleteModal/DeleteModal";
@@ -130,9 +131,24 @@ function App() {
   };
 
   const handleUpdateUser = ({ name, avatar }, resetForm) => {
-    setCurrentUserData((prev) => ({ ...prev, name, avatar }));
-    closeModal();
-    if (typeof resetForm === "function") resetForm();
+    const token = localStorage.getItem("jwt");
+    console.log("handleUpdateUser called", { name, avatar, hasToken: !!token });
+
+    if (!token) {
+      console.error("No jwt found in localStorage; cannot update profile");
+      return;
+    }
+
+    updateUser({ name, avatar: avatar || "" }, token)
+      .then((updatedUser) => {
+        console.log("updateUser success", updatedUser);
+        setCurrentUserData(updatedUser);
+        closeModal();
+        if (typeof resetForm === "function") resetForm();
+      })
+      .catch((err) => {
+        console.error("updateUser failed", err);
+      });
   };
 
   const onDelete = () => {

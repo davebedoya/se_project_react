@@ -9,11 +9,17 @@ export default function SideBar({ onEditProfile, onLogout }) {
   const currentUser = useContext(CurrentUserContext);
   const userName = currentUser?.name || "";
   const userAvatar = currentUser?.avatar || "";
+  const userInitial = (userName.trim()[0] || "?").toUpperCase();
+
   return (
     <aside>
       <div className="sidebar__profile">
         <p className="sidebar__username">{userName}</p>
-        <img src={userAvatar} alt="user avatar" className="sidebar__avatar" />
+        {userAvatar ? (
+          <img src={userAvatar} alt="user avatar" className="sidebar__avatar" />
+        ) : (
+          <div className="header__avatar-placeholder">{userInitial}</div>
+        )}
       </div>
       <div className="sidebar__buttons">
         <button

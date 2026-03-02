@@ -31,8 +31,34 @@ function EditProfileModal({ isOpen, onClose, onUpdateUser }) {
   }, [isOpen, currentUser, setValues]);
 
   function handleSubmit(evt) {
+    // // console.log("edit profile submit fired", values);
     evt.preventDefault();
-    const newErrors = validateAndSetErrors(values);
+    // // const newErrors = validateAndSetErrors(values);
+    // const valuesToValidate = {
+    //   name: values.name,
+    //   ...(values.avatar ? { avatar: values.avatar } : {}),
+    // };
+
+    // const newErrors = validateAndSetErrors(valuesToValidate);
+    // if (Object.keys(newErrors).length === 0) {
+    //   onUpdateUser(
+    //     {
+    //       name: values.name,
+    //       avatar: values.avatar,
+    //     },
+    //     resetForm,
+    //   );
+    // }
+    let valuesToValidate = {
+      name: values.name,
+    };
+    // we are always validating the name
+    if (values.avatar) {
+      valuesToValidate.avatar = values.avatar;
+    }
+    //if the user typed something in the avatar feild validate it
+    const newErrors = validateAndSetErrors(valuesToValidate);
+    // is name valid? if avatar exists , is it a valid URL
     if (Object.keys(newErrors).length === 0) {
       onUpdateUser(
         {
