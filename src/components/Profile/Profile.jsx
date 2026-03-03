@@ -8,6 +8,8 @@ export default function Profile({
   clothingItems,
   onEditProfile,
   onLogout,
+  onCardLike,
+  isLoggedIn,
 }) {
   return (
     <section className="profile">
@@ -16,6 +18,8 @@ export default function Profile({
         handleAddClick={handleAddClick}
         handleCardClick={handleCardClick}
         clothingItems={clothingItems}
+        onCardLike={onCardLike}
+        isLoggedIn={isLoggedIn}
       />
     </section>
   );

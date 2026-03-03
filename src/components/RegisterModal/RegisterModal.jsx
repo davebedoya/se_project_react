@@ -45,7 +45,7 @@ const RegisterModal = ({ isOpen, onClose, onRegister }) => {
       isOpen={isOpen}
       onSubmit={handleSubmit}
     >
-      <label htmlFor="name" className="modal__label">
+      <label htmlFor="register-name" className="modal__label">
         Name
         <input
           type="text"
@@ -53,7 +53,7 @@ const RegisterModal = ({ isOpen, onClose, onRegister }) => {
           //   isFormSubmitted && errors.name ? "modal__input_type_invalid" : ""
           // }`}
           className="modal__input"
-          id="name"
+          id="register-name"
           placeholder="Name"
           name="name"
           value={values.name}
@@ -64,7 +64,7 @@ const RegisterModal = ({ isOpen, onClose, onRegister }) => {
           <span className="modal__error">{errors.name}</span>
         )} */}
       </label>
-      <label htmlFor="avatar" className="modal__label">
+      <label htmlFor="register-avatar" className="modal__label">
         Avatar
         <input
           type="url"
@@ -72,7 +72,7 @@ const RegisterModal = ({ isOpen, onClose, onRegister }) => {
           //   isFormSubmitted && errors.avatar ? "modal__input_type_invalid" : ""
           // }`}
           className="modal__input"
-          id="avatar"
+          id="register-avatar"
           placeholder="Avatar URL"
           name="avatar"
           value={values.avatar}
@@ -82,7 +82,7 @@ const RegisterModal = ({ isOpen, onClose, onRegister }) => {
           <span className="modal__error">{errors.avatar}</span>
         )} */}
       </label>
-      <label htmlFor="email" className="modal__label">
+      <label htmlFor="register-email" className="modal__label">
         Email
         <input
           type="email"
@@ -90,7 +90,7 @@ const RegisterModal = ({ isOpen, onClose, onRegister }) => {
           //   isFormSubmitted && errors.email ? "modal__input_type_invalid" : ""
           // }`}
           className="modal__input"
-          id="email"
+          id="register-email"
           placeholder="Email"
           name="email"
           value={values.email}
@@ -101,7 +101,7 @@ const RegisterModal = ({ isOpen, onClose, onRegister }) => {
           <span className="modal__error">{errors.email}</span>
         )} */}
       </label>
-      <label htmlFor="password" className="modal__label">
+      <label htmlFor="register-password" className="modal__label">
         Password
         <input
           type="password"
@@ -111,7 +111,7 @@ const RegisterModal = ({ isOpen, onClose, onRegister }) => {
           //     : ""
           // }`}
           className="modal__input"
-          id="password"
+          id="register-password"
           placeholder="Password"
           name="password"
           value={values.password}

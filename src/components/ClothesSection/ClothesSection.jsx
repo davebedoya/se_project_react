@@ -8,6 +8,8 @@ export default function ClothesSection({
   handleAddClick,
   handleCardClick,
   clothingItems,
+  onCardLike,
+  isLoggedIn,
 }) {
   const currentUser = useContext(CurrentUserContext);
   const userItems = clothingItems.filter(
@@ -34,6 +36,8 @@ export default function ClothesSection({
               key={item._id}
               item={item}
               onCardClick={handleCardClick}
+              onCardLike={onCardLike}
+              isLoggedIn={isLoggedIn}
             />
           );
         })}

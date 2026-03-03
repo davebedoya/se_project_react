@@ -101,6 +101,7 @@ function App() {
   };
 
   const handleAddClick = () => {
+    if (!isLoggedIn) return;
     setActiveModal("add-garment");
   };
 
@@ -166,8 +167,6 @@ function App() {
       .catch(console.error);
   };
 
-  // TODO Create a function to pass the necessary data to the /signin request. If a log-in attempt is successful, check that the server gave access in its response and add it to localStorage:
-
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [currentUserData, setCurrentUserData] = useState({
     name: "",
@@ -215,7 +214,6 @@ function App() {
     if (!jwt) {
       return;
     }
-    // TODO - handle JWT
     auth
       .checkToken(jwt)
       .then((user) => {
@@ -227,32 +225,8 @@ function App() {
 
   const handleCardLike = ({ id, isLiked }) => {
     const token = localStorage.getItem("jwt");
-    // Check if this card is not currently liked
-
     if (!token) return;
-
     const request = !isLiked ? addCardLike : removeCardLike;
-    // !isLiked
-    //   ? // if so, send a request to add the user's id to the card's likes array
-    //     api
-    //       // the first argument is the card's id
-    //       .addCardLike(id, token)
-    //       .then((updatedCard) => {
-    //         setClothingItems((cards) =>
-    //           cards.map((item) => (item._id === id ? updatedCard : item)),
-    //         );
-    //       })
-    //       .catch((err) => console.log(err))
-    //   : // if not, send a request to remove the user's id from the card's likes array
-    //     api
-    //       // the first argument is the card's id
-    //       .removeCardLike(id, token)
-    //       .then((updatedCard) => {
-    //         setClothingItems((cards) =>
-    //           cards.map((item) => (item._id === id ? updatedCard : item)),
-    //         );
-    //       })
-
     request(id, token)
       .then((updatedCard) => {
         setClothingItems((cards) =>
@@ -300,6 +274,8 @@ function App() {
                       clothingItems={clothingItems}
                       onEditProfile={handleEditProfileClick}
                       onLogout={handleLogoutClick}
+                      onCardLike={handleCardLike}
+                      isLoggedIn={isLoggedIn}
                     />
                   </ProtectedRoute>
                 }
