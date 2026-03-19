@@ -1,4 +1,5 @@
-export const BASE_URL = "http://localhost:3001";
+// export const BASE_URL = "http://localhost:3001";
+import { BASE_URL } from "../utils/constants";
 import { handleServerResponse } from "./api";
 
 export const signup = ({ name, avatar, password, email }) => {

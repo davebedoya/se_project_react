@@ -1,3 +1,8 @@
+export const BASE_URL =
+  process.env.NODE_ENV === "production"
+    ? "https://api.wtwr.ubeagle.com"
+    : "http://localhost:3001";
+
 export const weatherOptions = [
   {
     day: true,
