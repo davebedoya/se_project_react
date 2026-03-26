@@ -58,7 +58,11 @@ function App() {
         };
         getWeather(coords, apiKey)
           .then((data) => {
+            console.log("RAW WEATHER DATA:", data); // 👈 add this
+
             const filteredData = filterWeatherData(data);
+            console.log("FILTERED WEATHER DATA:", filteredData); // 👈 add this
+
             setWeatherData(filteredData);
           })
           .catch(console.error);
